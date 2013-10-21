@@ -1,0 +1,54 @@
+﻿<section>
+    <h2 class="page-title" data-bind="text: title"></h2>
+</section>
+<table class="table" style="border: 1px solid #cccccc;">
+    <tr>
+        <td colspan="3" style="border: none;">
+            <button type="button" class="btn btn-danger btn-mini" data-bind="click: fnAddNewUser">Add New User</button>
+        </td>
+    </tr>
+    <thead>
+
+
+        <tr>
+            <td>ID</td>
+            <td>First Name</td>
+            <td>Last name</td>
+            <td>Date Of Birth</td>
+            <td>Actions?</td>
+
+        </tr>
+    </thead>
+    <tbody data-bind="foreach: userList">
+        <tr>
+            <td style="word-wrap: break-word;">
+                <input type="text" data-bind="value: Id, visible: edit()" style="width: 80%" />
+                <span data-bind="text: Id, visible: !edit()" />
+            </td>
+            <td style="word-wrap: break-word;">
+                <input type="text" data-bind="value: First, visible: edit()" style="width: 80%" />
+                <span data-bind="text: First, visible: !edit()" />
+
+            </td>
+            <td style="word-wrap: break-word;">
+
+                <input type="text" data-bind="value: Last, visible: edit()" style="width: 80%" />
+                <span data-bind="text: Last, visible: !edit()" />
+
+            </td>
+            <td style="word-wrap: break-word;">
+                <input type="text" data-bind="value: DOB, visible: edit()" style="width: 80%" />
+                <span data-bind="text: DOB, visible: !edit()" />
+
+            </td>
+            <td style="width: 180px">
+                <button class="btn btn-link btn-mini" data-bind="click: $parent.fnUserEdit, visible: !edit()">Edit</button>
+                <button class="btn btn-link btn-mini" data-bind="click: $parent.fnUserSave, visible: edit()">Save</button>
+                <button class="btn btn-link btn-mini" data-bind="click: $parent.fnUserCancel, visible: edit()">Cancel</button>
+                <button class="btn btn-link btn-mini" data-bind="click: $parent.fnUserDelete, visible: !edit()">Delete</button>
+
+            </td>
+        </tr>
+    </tbody>
+
+</table>
